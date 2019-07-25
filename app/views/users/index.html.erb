@@ -1,0 +1,25 @@
+<h1>Users</h1>
+
+<h2>Tenant: <%= current_tenant.presence || 'Not selected' %></h2>
+
+<p>
+<%= link_to 'Select Tenant', tenants_path %>
+</p>
+
+<%= form_for @user do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Create' %>
+<% end %>
+
+<hr>
+
+<ul>
+<% @users.each do |user| %>
+
+    <li>
+      <%= user.name %>
+    </li>
+
+<% end %>
+</ul>
+

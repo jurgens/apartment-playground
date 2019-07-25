@@ -1,0 +1,10 @@
+<h1>Tenants</h1>
+
+<h2>Current tenant: <%= current_tenant.presence || 'Not selected' %></h2>
+
+<%=form_for @tenant do |f| %>
+
+  <%= f.text_field :database %>
+  <%= f.submit 'Select' %>
+
+<% end %>
